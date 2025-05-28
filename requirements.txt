@@ -1,12 +1,12 @@
-pandas == 2.1.4\
-numpy == 1.26.3\
-matplotlib == 3.9.2\
-seaborn == 0.13.2\
-nltk\'a0 == 3.9.1\
-sklearn-crfsuite == 0.5.0\
-scikit-learn == 1.6.1\
-xgboost == 3.0.1\'a0 \
-scipy == 1.13.1\
-imblearn == 0.0\
-joblib == 1.5.0}
+pandas==2.1.4
+numpy==1.26.3
+matplotlib==3.9.2
+seaborn==0.13.2
+nltk==3.9.1
+sklearn-crfsuite==0.5.0
+scikit-learn==1.6.1
+xgboost==3.0.1
+scipy==1.13.1
+imblearn==0.0
+joblib==1.5.0
 gunicorn
