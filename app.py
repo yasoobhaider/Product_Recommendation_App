@@ -5,11 +5,11 @@ import pickle
 import model # Import our model.py file
   
 # Load model and preprocessors  
-with open('model/sentiment_model.pkl', 'rb') as f:  
-    sentiment_model = pickle.load(f)  
-with open('model/vectorizer.pkl', 'rb') as f:  
+with open('model/best_model.pkl', 'rb') as f:  
+    best_model = pickle.load(f)  
+with open('model/tfidf_vectorizer.pkl', 'rb') as f:  
     vectorizer = pickle.load(f)  
-with open('model/scaler.pkl', 'rb') as f:  
+with open('model/num_scaler.pkl', 'rb') as f:  
     scaler = pickle.load(f)  
 with open('model/full_cat_dummy_cols.pkl', 'rb') as f:  
     full_cat_dummy_cols = pickle.load(f)  
