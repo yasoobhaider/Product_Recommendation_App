@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Sentiment-Based Product Recommendation System</title>  
+    <style>  
+        body { font-family: Arial, sans-serif; }  
+        .container { margin: 40px auto; width: 600px; }  
+        h1 { color: #375a7f; }  
+        ul { list-style: none; padding: 0; }  
+        li { padding: 8px; border-bottom: 1px solid #ddd; }  
+    </style>  
+</head>  
+<body>  
+<div class="container">  
+    <h1>Sentiment-Based Product Recommender</h1>  
+    <form action="/recommend" method="post">  
+        <label for="user_input">Enter a user name for the recommendations:</label><br>  
+        <input type="text" name="user_input" id="user_input" value="{{ user_input or '' }}">  
+        <input type="submit" value="Get Recommendations">  
+    </form>  
+    {% if recommendations %}  
+        <h2>Top Recommendations for user: user_input/h2>  
+        <ul>  
+        {% for item in recommendations %}  
+            <li>{{ item }}</li>  
+        {% endfor %}  
+        </ul>  
+    {% endif %}  
+</div>  
+</body>  
+</html>
