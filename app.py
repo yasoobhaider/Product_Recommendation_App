@@ -7,7 +7,8 @@ import seaborn as sns
 import re  
 import nltk  
 from nltk.corpus import stopwords  
-from nltk.stem import WordNetLemmatizer  
+from nltk.stem import WordNetLemmatizer
+import json
   
 # feature extraction & modeling  
 from sklearn.model_selection import train_test_split, GridSearchCV  
@@ -185,7 +186,9 @@ def recommend():
         return jsonify({'error': f"User '{username}' not found."}), 404
     try:
         recommendations = hybrid_recommendations(username, product_reviews, top_n=15)
-        return (pd.DataFrame(recommendations.index, columns=['Recommended Items'].to_json(orient='records')), 200)
+        recommendations= (pd.DataFrame(recommendations.index).to_json(orient='records'))
+        recommendations=  recommendations.loads(recommendations)
+        return (recommendations, 200)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
